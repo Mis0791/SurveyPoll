@@ -1,0 +1,23 @@
+<p><a href="home">Go to Polls</a></p>
+<h3>{{question.content}}</h3>
+<p>Click the Vote button to choose one</p>
+<table>
+    <thead>
+      <tr>
+        <td>Option</td>
+        <td>Current Count of Values</td>
+        <td>Action</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{question.option1}}</td>
+        <td>{{question.opt1}}</td>
+        <td><button (click)="addVote(question._id, 1)">Vote</button></td>
+      </tr>
+      <tr>
+        <td>{{question.option2}}</td>
+        <td>{{question.opt2}}</td>
+        <td><button (click)="addVote(question._id, 2)">Vote</button></td>
+      </tr>
+    </tbody>

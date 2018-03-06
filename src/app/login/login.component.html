@@ -1,0 +1,6 @@
+<h1>Poll Login</h1>
+<form #userForm="ngForm" (submit)='login()'>
+  Name: <input type="text" name="name" pattern="[a-zA-Z][a-zA-Z]+" required minlength="2" maxlength="35" [(ngModel)]="user.name" #name="ngModel">
+  <div class="error" *ngIf='!name.valid && (name.dirty || name.touched)'>Your name is required!</div><br><br>
+  <input type="submit" [disabled]="!userForm.form.valid" value="Enter">
+</form>

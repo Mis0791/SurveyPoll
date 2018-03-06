@@ -1,0 +1,23 @@
+<p><a href="logout">Logout</a></p>
+<p><a routerLink="/createpoll">Create a Poll</a></p>
+<br>
+<h1>Polls</h1>
+<br>
+<table>
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Survey Question</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let question of allquestions">
+            <td>{{question.creator}}</td>
+            <td><a routerLink="/question/{{question._id}}">{{question.content}}</a></td>
+            <td *ngIf="question._user == username._id"><a href="/delete/{{question._id}}">Delete</a></td>
+        </tr>
+    </tbody>
+</table>
+
+

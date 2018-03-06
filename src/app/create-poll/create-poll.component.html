@@ -1,0 +1,18 @@
+<p><a href="home">Cancel</a></p>
+<h2>Put the question and options here:</h2>
+<br>
+<form #pollForm="ngForm" (submit)="addQuestion()">
+  Question: <input type="text" name="content" [(ngModel)]="question.content" required minlength="8" #content="ngModel"/>
+  <br>
+  <div class="valid" *ngIf="!content.valid && (content.dirty || content.touched)">Content is required & more than 8 characters</div>
+  <br>
+  Option 1: <input type="text" name="option1" [(ngModel)]="question.option1" required minlength="4" #option1="ngModel"/>
+  <br>
+  <div class="valid" *ngIf="!option1.valid && (option1.dirty || option1.touched)">Option 1 is required & must be more than 4 characters</div>
+  <br>
+  Option 2: <input type="text" name="option2" [(ngModel)]="question.option2" required minlength="4" #option2="ngModel"/>
+  <br>
+  <div class="valid" *ngIf="!option2.valid && (option2.dirty || option2.touched)">Option 2 is required & must be more than 4 characters</div>
+  <br>
+  <input type="submit" [disabled]="!pollForm.form.valid" value="Create Poll">
+</form>
